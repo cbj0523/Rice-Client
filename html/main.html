@@ -81,7 +81,7 @@
             schooldata.forEach(datas => {
                 let pdata = datas.split(",");
                 if(pdata.indexOf(selected) != -1){
-                    $('#result').append(pdata+"\n");
+                    $('#result').append(pdata+"<br>");
                     }
                 pdata = null;
                 })

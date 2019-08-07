@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69535d72-668a-47f0-a89e-bca83f643617" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/main.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +23,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1OVFWR7cwh6Lsf1hiyxFs0X2wmT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -87,7 +90,7 @@
       <workItem from="1564739529682" duration="7907000" />
       <workItem from="1564748687119" duration="625000" />
       <workItem from="1564752178584" duration="1821000" />
-      <workItem from="1565176118493" duration="4059000" />
+      <workItem from="1565176118493" duration="5531000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1565178248841</created>
@@ -116,6 +119,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Update" />
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
