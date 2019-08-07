@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <title>급식찾기앱</title>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+    <script>if (window.module) module = window.module;</script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+                <hr />
+                <div class="input-group mb-3">
+                    <input type="text" id="schoolinput" class="form-control" placeholder="학교명을 입력하세요..." style="margin-left:1%;margin-right: 1.3%;">
+                    <button type="button"  class="btn btn-success" style="margin-right:20%" onclick="findSchool()">찾기</button>
+                    <input type="date" id="calender" onchange="getDate()" style="margin-right: 2%; text-align:center;">
+                    <div class="input-group-append" style="margin-right:3%">
+                        <button class="btn btn-primary" >입력</button>
+                    </div>
+                </div>
+                <hr />
+            <div class="row">
+                <div id="result" class="col-sm-12"></div>
+                </div> 
+            </div> 
+        </div>
+        <hr />
+    </div>
+</div>
+</body>
+
+<script>
+
+    var nowdate = new Date();
+    nowdate = nowdate.toString().split(' ');
+    var tyear = nowdate[3];
+    var tmonth = nowdate[1];
+    var tdate = nowdate[2];
+    var schoolname;
+
+    switch(tmonth){
+        case "Jan": tmonth = "01"; break;
+        case "Feb": tmonth = "02"; break;
+        case "Mar": tmonth = "03"; break;
+        case "Apr": tmonth = "04"; break;
+        case "May": tmonth = "05"; break;
+        case "Jun": tmonth = "06"; break;
+        case "Jul": tmonth = "07"; break;
+        case "Aug": tmonth = "08"; break;
+        case "Sep": tmonth = "09"; break;
+        case "Oct": tmonth = "10"; break;
+        case "Nov": tmonth = "11"; break;
+        case "Dec": tmonth = "12"; break;
+    }
+
+    document.getElementById("calender").value = `${tyear}-${tmonth}-${tdate}`;
+
+    function getDate(){
+        var data = document.getElementById("calender").value;
+        // yyyy-mm-dd
+        var dataArr = data.split('-');
+
+        var year = dataArr[0];
+        var month = dataArr[1];
+        var date = dataArr[2];
+    }
+    var schoolcode;
+    function findSchool(){
+        var selected = document.getElementById("schoolinput").value.toString();
+        if(selected == null || selected == "" || selected == " ") return;
+        document.getElementById("result").innerText = "";
+        var schoolfile = jQuery.get('../school.txt', (data) => {
+            var schooldata = data.toString().split('\n');
+            schooldata.forEach(datas => {
+                let pdata = datas.split(",");
+                if(pdata.indexOf(selected) != -1){
+                    $('#result').append(pdata+"\n");
+                    }
+                pdata = null;
+                })
+            });
+        }
+
+</script>
+</html>

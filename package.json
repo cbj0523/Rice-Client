@@ -1,0 +1,20 @@
+{
+  "name": "rice-api-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "charset": "^1.0.1",
+    "electron": "^5.0.7",
+    "iconv-lite": "^0.5.0"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}
