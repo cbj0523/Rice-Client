@@ -1,0 +1,12 @@
+.school_result {
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    height: 3rem;
+    width: 35rem;
+    background: white;
+    border: 0px solid transparent;
+    border-radius: 10pt;
+    margin: auto;
+    padding: auto;
+    line-height: 3em;
+    margin-top:-0.4cm;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
     <title>급식찾기앱</title>
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 
@@ -81,8 +82,9 @@
             schooldata.forEach(datas => {
                 let pdata = datas.split(",");
                 if(pdata.indexOf(selected) != -1){
-                    $('#result').append(pdata+"<br>");
-                    }
+                    //$('#result').append(pdata+"<br>");
+                    $('#result').append(`<div class="school_result">${pdata}</div><br>`);
+                }
                 pdata = null;
                 })
             });
