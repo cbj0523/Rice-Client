@@ -19,7 +19,7 @@
     <script>
         $(function () {
             $("#datepicker1").datepicker({
-                dateFormat: 'yy.mm.dd',
+                dateFormat: 'yy년 mm월 dd일',
                 prevText: '이전 달',
                 nextText: '다음 달',
                 monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -38,13 +38,13 @@
 
 <body>
     <div class="header">
-        급식조회
+        급식조회 <span class="badge badge-danger">BETA</span>
     </div>
-    <div class="row">
+    <div class="row" id="search_zone">
         <div class="col">
             <div class="school_search">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="학교이름을 입력하세요..." aria-label="school_name"
+                    <input type="text" class="form-control" id="schoolinput" placeholder="학교이름을 입력하세요..." aria-label="school_name"
                         aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="btn btn-outline-success" type="button" id="button-addon2"
@@ -53,12 +53,11 @@
                 </div>
             </div>
         </div>
-        <!--https://eonasdan.github.io/bootstrap-datetimepicker/ -->
         <div class="col">
             <div class="row">
                 <div class="date_selecter">
                     <div class="input-group mb-3">
-                        <input type="text" id="datepicker1" class="form-control" placeholder="여기를 클릭하여 날짜선택..."
+                        <input type="text" id="datepicker1"class="form-control" placeholder="여기를 클릭하여 날짜선택..."
                             aria-label="date" aria-describedby="button-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="button-addon2">설정</button>
@@ -70,7 +69,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <div id="result" class="top"></div>
+            <div id="result"></div>
         </div>
     </div>
 
