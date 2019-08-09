@@ -12,9 +12,28 @@
         }
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../bower_components/jquery-ui/jquery-ui.min.css">
     <script>if (window.module) module = window.module;</script>
-
+    <script>
+        $(function () {
+            $("#datepicker1").datepicker({
+                dateFormat: 'yy.mm.dd',
+                prevText: '이전 달',
+                nextText: '다음 달',
+                monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+                showMonthAfterYear: true,
+                changeMonth: true,
+                changeYear: true,
+                yearSuffix: '년'
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -34,16 +53,16 @@
                 </div>
             </div>
         </div>
-        <!--https://eonasdan.github.io/bootstrap-datetimepicker/-->
+        <!--https://eonasdan.github.io/bootstrap-datetimepicker/ -->
         <div class="col">
             <div class="row">
                 <div class="date_selecter">
-                    <div class="input-group-append">
-                        <input class="date_calender" type="date" id="calender" onchange="getDate()"
-                            style="text-align:center;">
-
-                        <button class="btn btn-outline-success date_button">설정</button>
-
+                    <div class="input-group mb-3">
+                        <input type="text" id="datepicker1" class="form-control" placeholder="여기를 클릭하여 날짜선택..."
+                            aria-label="date" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">설정</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,7 +102,6 @@
 -->
 
 </body>
-
 <script>
 
     var nowdate = new Date();
