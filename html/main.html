@@ -147,11 +147,14 @@
                 let pdata = datas.split(",");
                 if (pdata.indexOf(selected) != -1) {
                     //$('#result').append(pdata+"<br>");
-                    $('#result').append(`<div class="school_result">${pdata}</div><br>`);
+                    $('#result').append(`<div class="school_result">${pdata}<button type="button" class="btn btn-outline-primary select_button">선택</button></div><br>`);
                 }
                 pdata = null;
             })
         });
+        //$('#result').append('<div class="btn-group btn-group-lg" role="group">(정보)오류/버그신고</div>');
+        //$('#result').append('<div class="btn-group" role="group">학교 추가/수정하기</div>');
+        //$('#result').append('<div class="btn-group btn-group-sm" role="group">문의하기</div>');
     }
 
 </script>

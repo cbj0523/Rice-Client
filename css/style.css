@@ -87,3 +87,7 @@ body {
 #search_zone {
     margin-bottom: 235px;
 }
+
+.select_button {
+    margin-right: 0px;
+}

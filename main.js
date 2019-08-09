@@ -12,7 +12,7 @@ function createWindow(){
         }
     });
     win.webContents.openDevTools();
-    win.setMenu(null);
+    //win.setMenu(null);
     win.loadFile(__dirname+`/html/${menu}.html`);
 
 }
