@@ -45,10 +45,9 @@
             <div class="school_search">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" id="schoolinput" placeholder="학교이름을 입력하세요..." aria-label="school_name"
-                        aria-describedby="button-addon2">
+                        aria-describedby="button-addon2" value="">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="button-addon2"
-                            onclick="findSchool()">검색</button>
+                        <button class="btn btn-outline-success" type="button" id="button-addon2" onclick="openSearch()">검색</button>
                     </div>
                 </div>
             </div>
@@ -70,6 +69,9 @@
     <div class="row">
         <div class="col">
             <div id="result"></div>
+        </div>
+        <div class="col" style="text-align: center">
+            급식결과
         </div>
     </div>
 
@@ -102,7 +104,7 @@
 
 </body>
 <script>
-
+    const get_meal = require('../get_meal.js');
     var nowdate = new Date();
     nowdate = nowdate.toString().split(' ');
     var tyear = nowdate[3];
@@ -127,6 +129,9 @@
 
     document.getElementById("calender").value = `${tyear}-${tmonth}-${tdate}`;
 
+    function openSearch() {
+        window.open("./searching.html", "childForm", "width=400, height=300");
+    }
     function getDate() {
         var data = document.getElementById("calender").value;
         // yyyy-mm-dd
@@ -136,6 +141,7 @@
         var month = dataArr[1];
         var date = dataArr[2];
     }
+
     var schoolcode;
     function findSchool() {
         var selected = document.getElementById("schoolinput").value.toString();
@@ -147,7 +153,9 @@
                 let pdata = datas.split(",");
                 if (pdata.indexOf(selected) != -1) {
                     //$('#result').append(pdata+"<br>");
-                    $('#result').append(`<div class="school_result">${pdata}<button type="button" class="btn btn-outline-primary select_button">선택</button></div><br>`);
+                    // 검색 후 나오는 값에서 학교아이디(M~~~~~~) 빼기
+
+                    $('#result').append(`<div class="school_result">${pdata}<button type="button" class="btn btn-outline-primary select_button"                                 style="margin-left:2%;" >선택</button></div><br>`);
                 }
                 pdata = null;
             })
@@ -156,6 +164,8 @@
         //$('#result').append('<div class="btn-group" role="group">학교 추가/수정하기</div>');
         //$('#result').append('<div class="btn-group btn-group-sm" role="group">문의하기</div>');
     }
+
+
 
 </script>
 

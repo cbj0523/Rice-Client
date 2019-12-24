@@ -5,14 +5,14 @@ let menu = "main";
 
 function createWindow(){
     let win = new BrowserWindow({
-        width:1000,
-        height:600,
+        width:500,
+        height:700,
         webPreferences:{
             nodeIntegration:true
         }
     });
     win.webContents.openDevTools();
-    //win.setMenu(null);
+    win.setMenu(null);
     win.loadFile(__dirname+`/html/${menu}.html`);
 
 }

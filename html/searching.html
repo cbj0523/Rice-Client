@@ -4,23 +4,54 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script type="text/javascript" src="../js/bootstrap.js"></script>
-    <title>급식찾기앱</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                학교 찾는 부분
+
+    <div class="row" id="search_zone">
+        <div class="col">
+            <div class="searchingwindow">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="schoolinput" placeholder="학교이름을 입력하세요..." aria-label="school_name"
+                           aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="button" id="button-addon2"
+                                onclick="findSchool()">검색</button>
+                    </div>
+                    <div id="result"></div>
+                </div>
             </div>
-            <div class="col-sm-6">
-                날짜 정하는 부분
-            </div>
+
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                급식 결과 나오는 부분
-            </div>
-        </div>
+
     </div>
+<script>
+
+        var pdata;
+
+        function findSchool() {
+            var selected = document.getElementById("schoolinput").value.toString();
+            if (selected == null || selected == "" || selected == " ") return;
+            var schoolfile = jQuery.get('../school.txt', (data) => {
+                var schooldata = data.toString().split('\n');
+                schooldata.forEach(datas => {
+                    pdata = datas.split(",");
+                    if (pdata.indexOf(selected) != -1) {
+                        //$('#result').append(pdata+"<br>");
+                        // 검색 후 나오는 값에서 학교아이디(M~~~~~~) 빼기
+
+                        $('#result').append(`<div class="school_result" id="${pdata}">${pdata}<button type="button" class="btn btn-outline-primary select_button"                                 style="margin-left:2%;" onclick="sendData(pdata)">선택</button></div><br>`);
+                    }
+                })
+            });
+        }
+
+        function sendData(schooldata){
+            opener.document.getElementById("schoolinput").value = schooldata;
+        }
+
+</script>
 </body>
 </html>
