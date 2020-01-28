@@ -5,7 +5,7 @@ let menu = "main";
 
 function createWindow(){
     let win = new BrowserWindow({
-        width:500,
+        width:900,
         height:700,
         webPreferences:{
             nodeIntegration:true

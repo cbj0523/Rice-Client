@@ -37,43 +37,55 @@
 </head>
 
 <body>
+<div class="frame">
     <div class="header">
         급식조회 <span class="badge badge-danger">BETA</span>
     </div>
-    <div class="row" id="search_zone">
-        <div class="col">
-            <div class="school_search">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="schoolinput" placeholder="학교이름을 입력하세요..." aria-label="school_name"
-                        aria-describedby="button-addon2" value="">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="button-addon2" onclick="openSearch()">검색</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
+    <div class="container">
             <div class="row">
-                <div class="date_selecter">
-                    <div class="input-group mb-3">
-                        <input type="text" id="datepicker1"class="form-control" placeholder="여기를 클릭하여 날짜선택..."
-                            aria-label="date" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">설정</button>
+                <div class="col">
+                    <div class="input_box" >
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="schoolinput" placeholder="학교이름을 입력하세요..." aria-label="school_name" aria-describedby="button-addon2" value="">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success" type="button" id="button-addon2" onclick="findSchool()">검색</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="input_box">
+                        <div class="input-group mb-3">
+                            <input type="text" id="datepicker1" class="form-control" placeholder="여기를 클릭해 날짜선택..." aria-label="date" aria-describedby="button-addon2" onchange="calenderHandle(this.value)">
+                            <div class="input-group-append">
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">종류</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">유치원</a>
+                                        <a class="dropdown-item" href="#">초등학교</a>
+                                        <a class="dropdown-item" href="#">중학교</a>
+                                        <a class="dropdown-item" href="#">고등학교</a>
+                                    </div>
+                                </div>
+
+
+
+                                <button class="btn btn-info" type="button" id="button-addon2" onclick="getMeal(schoolcode, schoolname, sdate)">찾기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col" id="input_result">
+                    <div id="result">
+                </div>
+                <div class="col" id="input_result">
+                </div>
             </div>
-        </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <div id="result"></div>
-        </div>
-        <div class="col" style="text-align: center">
-            급식결과
-        </div>
-    </div>
+</div>
+
+</div>
 
     <!--
     <div class="container">
@@ -104,13 +116,11 @@
 
 </body>
 <script>
-    const get_meal = require('../get_meal.js');
     var nowdate = new Date();
     nowdate = nowdate.toString().split(' ');
     var tyear = nowdate[3];
     var tmonth = nowdate[1];
     var tdate = nowdate[2];
-    var schoolname;
 
     switch (tmonth) {
         case "Jan": tmonth = "01"; break;
@@ -127,22 +137,9 @@
         case "Dec": tmonth = "12"; break;
     }
 
-    document.getElementById("calender").value = `${tyear}-${tmonth}-${tdate}`;
-
-    function openSearch() {
-        window.open("./searching.html", "childForm", "width=400, height=300");
-    }
-    function getDate() {
-        var data = document.getElementById("calender").value;
-        // yyyy-mm-dd
-        var dataArr = data.split('-');
-
-        var year = dataArr[0];
-        var month = dataArr[1];
-        var date = dataArr[2];
-    }
-
-    var schoolcode;
+    var schoolcode = "";
+    var schoolname = "";
+    var sdate = "";
     function findSchool() {
         var selected = document.getElementById("schoolinput").value.toString();
         if (selected == null || selected == "" || selected == " ") return;
@@ -151,11 +148,11 @@
             var schooldata = data.toString().split('\n');
             schooldata.forEach(datas => {
                 let pdata = datas.split(",");
-                if (pdata.indexOf(selected) != -1) {
+                if (pdata[0].indexOf(selected) != -1) {
                     //$('#result').append(pdata+"<br>");
                     // 검색 후 나오는 값에서 학교아이디(M~~~~~~) 빼기
-
-                    $('#result').append(`<div class="school_result">${pdata}<button type="button" class="btn btn-outline-primary select_button"                                 style="margin-left:2%;" >선택</button></div><br>`);
+                    console.log(pdata);
+                    $('#result').append(`<div class="input_box">${pdata[0]} - ${pdata[1]}<button type="button" name="${pdata[0]}" id="${pdata[2]}" class="btn btn-outline-primary select_button" style="margin-left:3%;" onclick="schoolcode=this.id; schoolname=this.name; this.disabled = true;">선택</button></div><br>`);
                 }
                 pdata = null;
             })
@@ -163,6 +160,42 @@
         //$('#result').append('<div class="btn-group btn-group-lg" role="group">(정보)오류/버그신고</div>');
         //$('#result').append('<div class="btn-group" role="group">학교 추가/수정하기</div>');
         //$('#result').append('<div class="btn-group btn-group-sm" role="group">문의하기</div>');
+    }
+
+    function calenderHandle(date){
+        sdate = date.toString();
+        console.log(sdate);
+    }
+
+    function getMeal(schoolcode, schoolname , date){
+        datedata = date.toString().split(" ");
+        year = datedata[0];
+        month = datedata[1];
+        day = datedata[2];
+
+        year = year.split("년");
+        month = month.split("월");
+        day = day.split("일");
+
+        year = year[0];
+        month = month[0];
+        day = day[0];
+        let schoolkindcode;
+        /* if(schoolname.indexOf("유치원")){
+            schoolkindcode = 1;
+        }else if(schoolname.startsWith("초등학교", schoolname.length)){
+            schoolkindcode = 2;
+        }else if(schoolname.indexOf("중학교") != -1){
+            schoolkindcode = 3;
+        }else if(schoolname.indexOf("고등학교") != -1){
+            schoolkindcode = 4;
+        } */
+
+        let url = `http://127.0.0.1:5000/?office_of_education=cbe&school_type_code=${schoolkindcode}&school_code=${schoolcode}&year=${year}&month=${month}&date=${day}`
+        console.log(url);
+        /* $.ajax({
+            url:`http://127.0.0.1:5000/?office_of_education=cbe&school_type_code=${schoolkindcode}&school_code=${schoolcode}&year=2019&month=06&date=21`
+        }) */
     }
 
 
