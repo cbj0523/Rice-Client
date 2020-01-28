@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <link rel="stylesheet" href="../css/style.css">
     <title>급식찾기앱</title>
     <script>if (typeof module === 'object') {
@@ -48,6 +49,15 @@
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="schoolinput" placeholder="학교이름을 입력하세요..." aria-label="school_name" aria-describedby="button-addon2" value="">
                             <div class="input-group-append">
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">교육청</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">유치원</a>
+                                        <a class="dropdown-item" href="#">초등학교</a>
+                                        <a class="dropdown-item" href="#">중학교</a>
+                                        <a class="dropdown-item" href="#">고등학교</a>
+                                    </div>
+                                </div>
                                 <button class="btn btn-outline-success" type="button" id="button-addon2" onclick="findSchool()">검색</button>
                             </div>
                         </div>
@@ -180,16 +190,16 @@
         year = year[0];
         month = month[0];
         day = day[0];
-        let schoolkindcode;
-        /* if(schoolname.indexOf("유치원")){
+        let schoolkindcode = 0;
+        if(schoolname.indexOf("유치원") ){
             schoolkindcode = 1;
-        }else if(schoolname.startsWith("초등학교", schoolname.length)){
+        }else if(schoolname.indexOf("초등학교") != -1){
             schoolkindcode = 2;
         }else if(schoolname.indexOf("중학교") != -1){
             schoolkindcode = 3;
         }else if(schoolname.indexOf("고등학교") != -1){
             schoolkindcode = 4;
-        } */
+        }
 
         let url = `http://127.0.0.1:5000/?office_of_education=cbe&school_type_code=${schoolkindcode}&school_code=${schoolcode}&year=${year}&month=${month}&date=${day}`
         console.log(url);

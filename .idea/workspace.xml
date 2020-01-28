@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69535d72-668a-47f0-a89e-bca83f643617" name="Default Changelist" comment="">
+    <list default="true" id="69535d72-668a-47f0-a89e-bca83f643617" name="Default Changelist" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.min.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.min.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +106,8 @@
       <workItem from="1565176118493" duration="5531000" />
       <workItem from="1577198067591" duration="3949000" />
       <workItem from="1580129479351" duration="8402000" />
-      <workItem from="1580174259705" duration="8116000" />
+      <workItem from="1580174259705" duration="8201000" />
+      <workItem from="1580198607364" duration="1299000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1565178248841</created>
@@ -126,22 +145,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="498" y="41" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580198308736" />
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1580197307239">
+    <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1580198364024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580197307239" />
-    <state width="1899" height="261" key="GridCell.Tab.0.center" timestamp="1580197307239">
+    <state width="1899" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580198364024" />
+    <state width="1899" height="261" key="GridCell.Tab.0.center" timestamp="1580198364023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580197307239" />
-    <state width="1899" height="261" key="GridCell.Tab.0.left" timestamp="1580197307239">
+    <state width="1899" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580198364023" />
+    <state width="1899" height="261" key="GridCell.Tab.0.left" timestamp="1580198364023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580197307239" />
-    <state width="1899" height="261" key="GridCell.Tab.0.right" timestamp="1580197307239">
+    <state width="1899" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580198364023" />
+    <state width="1899" height="261" key="GridCell.Tab.0.right" timestamp="1580198364023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580197307239" />
+    <state width="1899" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580198364023" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1580197674391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
